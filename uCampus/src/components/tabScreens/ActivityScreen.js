@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, Button } from 'react-native';
+import { View, Text, Dimensions, Button, TouchableOpacity } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import TitleBar from './tabDecorators/TitleBar';
 import About from './activityModules/About';
 import NavigationBar from '../NavigationBar';
+const headerFontColor = 'blue';
 const styles = {
     content: {
         flex: 1,
@@ -11,6 +13,15 @@ const styles = {
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#f2f2f2',
+    },
+    headerLeft: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center'      
+    },
+    headerLeftText: {
+        fontSize: 18,
+        color: headerFontColor
     }
 }
 const uWidth = Dimensions.get('window').width;
@@ -27,11 +38,12 @@ class ActivityScreen extends Component{
                   (value)=>{
                       return (
                       <View 
-                        key={value}
+                        key={value}                     
                         style={{ width: mWidth, height: mWidth, backgroundColor: 'white', margin: 2}}> 
                       <Button
                         title="Go to Details"
-                        onPress={() => this.props.navigation.navigate('About')}/>
+                        onPress={() => this.props.navigation.navigate('About')}
+                        />
                       </View>);
                   }
               )}
@@ -42,13 +54,32 @@ class ActivityScreen extends Component{
 
 
 const ActivityStack = StackNavigator({
-    ActivityScreen: { screen: ActivityScreen },
-    About: { screen: About,                 
+    ActivityScreen: { screen: ActivityScreen,
         navigationOptions: {
+            headerLeft: <Button
+                             title=""
+                             onPress={ () => {} } />,
+        }
+     },
+    About: { screen: About,                 
+        navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
                              title="Refresh"
                              onPress={ () => console.log('Refresh') } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
         headerTitle: <Text
                style={{
                    backgroundColor: 'white',
@@ -67,7 +98,7 @@ const ActivityStack = StackNavigator({
             headerTitleStyle: {
                alignSelf: 'center'
             }
-        } 
+        }) 
     }
   },
   {
