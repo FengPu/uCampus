@@ -46,6 +46,9 @@ const ActivityStack = StackNavigator({
     About: { screen: About,                 
         navigationOptions: {
         tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => console.log('Refresh') } />,
         headerTitle: <Text
                style={{
                    backgroundColor: 'white',
