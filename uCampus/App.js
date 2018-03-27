@@ -11,22 +11,33 @@ import {
   Text,
   View
 } from 'react-native';
-
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
+import reducer from './src/reducers';
 import NavigationBar from './src/components/NavigationBar';
 
+/*
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+*/
+
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-   
+
+      <Provider store={createStoreWithMiddleware(reducer)}>
         <NavigationBar/>
+      </Provider>
+   
+        
   
       
     );
