@@ -4,7 +4,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { TabNavigator, TabBarBottom, StackNavigator } from 'react-navigation';
 import LearningScreen from './tabScreens/LearningScreen';
 import ActivityStack from './tabScreens/ActivityStack';
-import About from './tabScreens/activityModules/About';
 import MessageScreen from './tabScreens/MessageScreen';
 import SettingsScreen from './tabScreens/SettingsScreen';
 

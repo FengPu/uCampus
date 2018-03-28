@@ -8,15 +8,15 @@ const styles = {
         backgroundColor: '#f2f2f2'
     }
 }
-class About extends Component{
+class Region extends Component{
     render(){
         return(
         <View style={{flex: 1}}>
             <View style={styles.content}>
-            <Text> about </Text>
+            <Text> guess </Text>
             </View>
         </View>);
     }
 }
 
-export { About };
+export { Region };

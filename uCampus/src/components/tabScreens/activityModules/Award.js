@@ -8,15 +8,15 @@ const styles = {
         backgroundColor: '#f2f2f2'
     }
 }
-class About extends Component{
+class Award extends Component{
     render(){
         return(
         <View style={{flex: 1}}>
             <View style={styles.content}>
-            <Text> about </Text>
+            <Text> Award </Text>
             </View>
         </View>);
     }
 }
 
-export { About };
+export { Award };

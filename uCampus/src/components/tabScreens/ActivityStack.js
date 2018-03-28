@@ -3,7 +3,19 @@ import { View, Text, Dimensions, Button, TouchableOpacity } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TitleBar from './tabDecorators/TitleBar';
+/*
 import About from './activityModules/About';
+import Admission from './activityModules/Admission';
+import Award from './activityModules/Award';
+import Books from './activityModules/Books';
+import Grade from './activityModules/Grade';
+import Guess from './activityModules/Guess';
+import QA from './activityModules/QA';
+import Region from './activityModules/Region';
+import Review from './activityModules/Review';
+*/
+//import {Grade} from './activityModules/Grade';
+import { About, Admission, Award, Books, Grade, Guess, QA, Region, Review } from './activityModules';
 import NavigationBar from '../NavigationBar';
 import ActivityScreen from './ActivityScreen';
 
@@ -28,7 +40,254 @@ const ActivityStackComponent = StackNavigator({
                              onPress={ () => {} } />,
         }
      },
-    About: { screen: About,                 
+    //關於比賽
+    About: { screen: About,             
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="123"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> About </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //入場證 
+    Admission: { screen: Admission,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 入場證 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //得獎名單
+    Award: { screen: Award,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 得獎名單 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //作文專書
+    Books: { screen: Books,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 作文專書 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //成績
+    Grade: { screen: Grade,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 成績 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //考前猜猜
+    Guess: { screen: Guess,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 考前猜猜 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //關於比賽 
+    Guess: { screen: Guess,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
@@ -67,7 +326,131 @@ const ActivityStackComponent = StackNavigator({
                alignSelf: 'center'
             }
         }) 
+    },
+    //常見問題 
+    QA: { screen: QA,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 常見問題 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //賽區資訊 
+    Region: { screen: Region,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 賽區資訊 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //題目回顧 
+    Review: { screen: Review,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="Refresh"
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>test</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 題目回顧 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
     }
+
   },
   {
     navigationOptions: {
@@ -96,7 +479,7 @@ const ActivityStackComponent = StackNavigator({
     headerMode: 'none'
   });
 
-
+/*
 class ActivityStack extends Component {
     constructor(props){
         super(props);
@@ -106,5 +489,6 @@ class ActivityStack extends Component {
     }
 
 }
+*/
 
-export default ActivityStack;
+export default ActivityStackComponent;
