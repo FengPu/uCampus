@@ -286,47 +286,6 @@ const ActivityStackComponent = StackNavigator({
             }
         }) 
     },
-    //關於比賽 
-    Guess: { screen: Guess,                 
-        navigationOptions: ({ navigation }) => ({
-        tabBarVisible: false,
-        headerRight: <Button
-                             title="Refresh"
-                             onPress={ () => {
-                                } } />,
-        headerLeft: <TouchableOpacity 
-                        onPress={() => navigation.navigate('ActivityScreen')}
-                        >
-                        <View style={styles.headerLeft}>
-                            <Icon 
-                            name="angle-left" 
-                            size={30} 
-                            style={{marginRight: 5, marginLeft: 5}}
-                            color={headerFontColor}>
-                            </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
-                        </View>
-                    </TouchableOpacity>,
-        headerTitle: <Text
-               style={{
-                   backgroundColor: 'white',
-                   alignSelf: 'center',
-                   textAlignVertical: 'center',
-                   fontSize: 16, 
-                   fontWeight: 'bold'
-               }}
-               onPress={() => {
-                   
-               }}> About </Text>,
-            headerStyle: { 
-              height: 50,
-              backgroundColor: 'white'
-            },
-            headerTitleStyle: {
-               alignSelf: 'center'
-            }
-        }) 
-    },
     //常見問題 
     QA: { screen: QA,                 
         navigationOptions: ({ navigation }) => ({
