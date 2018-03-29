@@ -480,6 +480,7 @@ const ActivityStackComponent = StackNavigator({
   });
 
 /*
+//Wrap the StackNavigator inside a class will cause tabBarVisible config. inactivate
 class ActivityStack extends Component {
     constructor(props){
         super(props);
