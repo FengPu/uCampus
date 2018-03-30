@@ -15,7 +15,9 @@ import Region from './activityModules/Region';
 import Review from './activityModules/Review';
 */
 //import {Grade} from './activityModules/Grade';
-import { About, Admission, Award, Books, Grade, Guess, QA, Region, Review } from './activityModules';
+import { About, Admission, Books, Grade, Guess, QA, Region } from './activityModules';
+import Award from './activityModules/Award';
+import Review from './activityModules/Review';
 import NavigationBar from '../NavigationBar';
 import ActivityScreen from './ActivityScreen';
 
@@ -71,7 +73,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> About </Text>,
+               }}> 關於比賽 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'

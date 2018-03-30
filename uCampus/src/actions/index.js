@@ -1,11 +1,11 @@
-export const SET_CONTESTTYPE = 'SET_CONTESTTYPE';
+export const SELECT_AWARDLEVEL = 'SELECT_AWARDLEVEL';
 
-export function setContestType(contestType){
+export function selectLevel(awardLevel){
 
     return{
-      type: SET_CONTESTTYPE,
+      type: SELECT_AWARDLEVEL,
       payload: {
-        contestType: contestType
+        awardLevel
       }
     }
   }

@@ -4,12 +4,14 @@ import { View, Text, Dimensions, Button, TouchableOpacity, Image } from 'react-n
 import { StackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TitleBar from './tabDecorators/TitleBar';
-import { About, Admission, Award, Books, Grade, Guess, QA, Region, Review } from './activityModules';
+import { About, Admission, Books, Grade, Guess, QA, Region } from './activityModules';
+import Award from './activityModules/Award';
+import Review from './activityModules/Review';
 import NavigationBar from '../NavigationBar';
 import { activityAbout, activityAdmission, activityAward, activityBooks, activityGrade,
          activityGuess, activityQA, activityRegion, activityReview } from '../../images/images';
 
-         const uWidth = Dimensions.get('window').width;
+const uWidth = Dimensions.get('window').width;
 const uHeight = Dimensions.get('window').height;
 const mWidth = Math.floor((uWidth-12)/3);
 const headerFontColor = 'blue';
@@ -81,3 +83,4 @@ export default class ActivityScreen extends Component{
         </View>);
     }
 }
+

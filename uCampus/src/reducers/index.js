@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import ContestType from './reducer_contestType';
+import AwardLevel from './reducer_awardLevel';
 
 const appReducer = combineReducers({
-    contestType: ContestType
+    awardLevel: AwardLevel
 });
 
 

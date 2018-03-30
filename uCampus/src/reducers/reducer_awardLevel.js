@@ -1,20 +1,16 @@
-import { SET_CONTESTTYPE } from '../actions';
-
-// firstRound 初賽
-// final 決賽
+import { SELECT_AWARDLEVEL } from '../actions';
 
 const defaultStatus = {
-    contestType: 'firstRound'
+    awardLevel: '1'
   };
 
 export default function (state = defaultStatus, action) {
   if (action) {
     switch (action.type) {
-      case SET_CONTESTTYPE:
+      case SELECT_AWARDLEVEL:
         return action.payload;
       default:
-        return {};
+        return state;
     }
   }
-  return state;
 }
