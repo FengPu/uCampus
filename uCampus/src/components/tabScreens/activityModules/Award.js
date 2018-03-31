@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import TitleBar from '../tabDecorators/TitleBar';
 import LevelSelector from './utilities/LevelSelector';
+import ListItem from './utilities/ListItem';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectLevel } from '../../../actions/index';
@@ -31,6 +32,10 @@ class Award extends Component{
         }else{
             
         }
+        /*
+        Using Spread Operator to propogate this.props to child component
+        (We need this.props.navigate to operate stackNavigator)
+        */
         return(
         <View style={{flex: 1}}>
             <View style={styles.content}>
@@ -39,6 +44,7 @@ class Award extends Component{
                 </View>
                 <View style={styles.regions}>                
                   <Text>{JSON.stringify(this.props.selectdLevel.awardLevel)}</Text>
+                  <ListItem {...this.props}/>
                 </View>
             </View>
         </View>);

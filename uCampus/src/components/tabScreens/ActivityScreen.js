@@ -40,7 +40,7 @@ const styles = {
 export default class ActivityScreen extends Component{
     constructor(props){
         
-        super(props)
+        super(props);
         this.activityModules = [
             {component: About, name: 'About', title: '關於比賽', icon: activityAbout},
             {component: Region, name: 'Region', title: '賽區資訊', icon: activityRegion},
@@ -69,7 +69,7 @@ export default class ActivityScreen extends Component{
                         onPress={() => {
                             /*this.props.navigation.setParams({
                                 tabBarVisible: false});*/
-                            this.props.navigation.navigate(modules.name);                         
+                            this.props.navigation.navigate(modules.name, {title: 'WHATEVER', alf: '關於比賽'});                         
                         }}
                         > 
                       <Image style={styles.iconImg} source={modules.icon}/>

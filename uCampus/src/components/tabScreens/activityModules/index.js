@@ -7,3 +7,4 @@ export * from './Guess';
 export * from './QA';
 export * from './Region';
 export * from './Review';
+export * from './Leaf'
