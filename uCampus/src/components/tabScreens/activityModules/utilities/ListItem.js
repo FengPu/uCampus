@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, WebView, PixelRatio } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { selectLevel } from '../../../../actions/index';
 
+//#2D82C6
 const styles = {
     content: {
         flex: 1,
         backgroundColor: '#f2f2f2'
     },
-    levels: {
-        flex: 1.2,
-        backgroundColor: 'gray'
+    item: {
+        height: 56,// / PixelRatio.get(),
+        width: '100%',
+        backgroundColor: 'white',
+        justifyContent: 'space-between',
+        padding: 8,// / PixelRatio.get(),
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 1,// / PixelRatio.get(),
+        marginBottom: 1,// / PixelRatio.get(),
     },
-    regions: {
-        flex: 4,
-        backgroundColor: 'green'
+    itemTitle: {
+        fontSize: 14
     }
 }
 class ListItem extends Component{
@@ -23,19 +31,25 @@ class ListItem extends Component{
         super(props);
     }
     render(){
-        let content = (<Text>123</Text>);
-        if("awardLevel" in this.props.selectdLevel){
-            //pass
-        }else{
-            
+        let content = (<Text style={styles.itemTitle}>default item title</Text>);
+        if(this.props.itemTitle){
+            content = (<Text style={styles.itemTitle}>{this.props.itemTitle}</Text>);
         }
-        //this.props.selectdLevel.awardLevel
         return(
         <TouchableOpacity 
-          onPress={()=>{this.props.navigation.navigate('Leaf', { title: 'alf', back: 'Award'})}}
+          onPress={
+              ()=>{
+              this.props.navigation.navigate('Leaf', { 
+                  title: this.props.title, 
+                  back: this.props.back,
+                  pageUrl: this.props.pageUrl
+                })
+              }
+            }
         >
-        <View>
+        <View style={styles.item}>
             { content }
+            <Icon name='angle-right' size={30} color='gray' />
         </View>
         </TouchableOpacity>
         );
@@ -49,7 +63,7 @@ function mapDispatchToProps(dispatch) {
   
 function mapStateToProps(state) {
     return {
-        selectdLevel: state.awardLevel
+        selectedLevel: state.awardLevel
     };
   }
   

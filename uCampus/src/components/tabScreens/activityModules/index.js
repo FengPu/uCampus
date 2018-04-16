@@ -7,4 +7,7 @@ export * from './Guess';
 export * from './QA';
 export * from './Region';
 export * from './Review';
-export * from './Leaf'
+export * from './Leaf';
+export * from './DataList';
+export * from './RegionFinal';
+export * from './AwardFinal';

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, WebView } from 'react-native';
 import TitleBar from '../tabDecorators/TitleBar';
+import WeeblyWebView from './utilities/WeeblyWebView';
 
 const styles = {
     content: {
@@ -12,12 +13,15 @@ export default class Leaf extends Component{
     constructor(props){
         super(props);
     }
+    //signup-container-header
     render(){
+        console.log(this.props.navigation.state.params.pageUrl);
         return(
         <View style={{flex: 1}}>
             <View style={styles.content}>
-            <Text> leaf </Text>
+            <WeeblyWebView source={{uri: this.props.navigation.state.params.pageUrl}} />
             </View>
         </View>);
     }
 }
+

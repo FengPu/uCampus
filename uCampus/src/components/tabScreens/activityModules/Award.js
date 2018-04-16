@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import TitleBar from '../tabDecorators/TitleBar';
 import LevelSelector from './utilities/LevelSelector';
-import ListItem from './utilities/ListItem';
+import WinnerListItem from './utilities/WinnerListItem';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectLevel } from '../../../actions/index';
 
-const grayBackground = 'gray';
+const grayBackground = '#F1F1F1';
 const styles = {
     content: {
         flex: 1,
-        backgroundColor: '#f2f2f2'
+        backgroundColor: grayBackground
     },
     levels: {
         flex: 1.2,
@@ -19,7 +19,7 @@ const styles = {
     },
     regions: {
         flex: 4,
-        backgroundColor: 'green'
+        backgroundColor: '#F1F1F1'
     }
 }
 class Award extends Component{
@@ -27,7 +27,147 @@ class Award extends Component{
         super(props);
     }
     render(){
-        if("awardLevel" in this.props.selectdLevel){
+        let configObjs=[
+            [
+                {
+                title: '北區',
+                back: 'Award',
+                itemTitle: '北區'
+                },
+                {
+                    title: '中區',
+                    back: 'Award',
+                    itemTitle: '中區'
+                },
+                {
+                    title: '南區',
+                    back: 'Award',
+                    itemTitle: '南區'
+                },
+                {
+                    title: '東區',
+                    back: 'Award',
+                    itemTitle: '東區'
+                },
+                {
+                    title: '離島1',
+                    back: 'Award',
+                    itemTitle: '離島1'
+                }
+            ],
+            [
+                {
+                title: '北區',
+                back: 'Award',
+                itemTitle: '北區'
+                },
+                {
+                    title: '中區',
+                    back: 'Award',
+                    itemTitle: '中區'
+                },
+                {
+                    title: '南區',
+                    back: 'Award',
+                    itemTitle: '南區'
+                },
+                {
+                    title: '東區2',
+                    back: 'Award',
+                    itemTitle: '東區2'
+                }
+            ],
+            [
+                {
+                title: '北區',
+                back: 'Award',
+                itemTitle: '北區'
+                },
+                {
+                    title: '中區',
+                    back: 'Award',
+                    itemTitle: '中區'
+                },
+                {
+                    title: '南區3',
+                    back: 'Award',
+                    itemTitle: '南區3'
+                },
+                {
+                    title: '東區',
+                    back: 'Award',
+                    itemTitle: '東區'
+                }
+            ],
+            [
+                {
+                title: '北區',
+                back: 'Award',
+                itemTitle: '北區4'
+                },
+                {
+                    title: '中區',
+                    back: 'Award',
+                    itemTitle: '中區'
+                },
+                {
+                    title: '南區',
+                    back: 'Award',
+                    itemTitle: '南區'
+                },
+                {
+                    title: '東區',
+                    back: 'Award',
+                    itemTitle: '東區'
+                }
+            ],
+            [
+                {
+                title: '北區',
+                back: 'Award',
+                itemTitle: '北區'
+                },
+                {
+                    title: '中區',
+                    back: 'Award',
+                    itemTitle: '中區'
+                },
+                {
+                    title: '南區',
+                    back: 'Award',
+                    itemTitle: '南區'
+                },
+                {
+                    title: '東區5',
+                    back: 'Award',
+                    itemTitle: '東區5'
+                }
+            ],
+            [
+                {
+                title: '北區',
+                back: 'Award',
+                itemTitle: '北區'
+                },
+                {
+                    title: '中區',
+                    back: 'Award',
+                    itemTitle: '中區'
+                },
+                {
+                    title: '南區6',
+                    back: 'Award',
+                    itemTitle: '南區6'
+                },
+                {
+                    title: '東區',
+                    back: 'Award',
+                    itemTitle: '東區'
+                }
+            ]
+
+        ]
+        if("awardLevel" in this.props.selectedLevel){
             //pass
         }else{
             
@@ -43,8 +183,13 @@ class Award extends Component{
                   <LevelSelector />
                 </View>
                 <View style={styles.regions}>                
-                  <Text>{JSON.stringify(this.props.selectdLevel.awardLevel)}</Text>
-                  <ListItem {...this.props}/>
+                    { 
+                      configObjs[Number(this.props.selectedLevel.awardLevel)-1].map(
+                          (configObj, index)=>{
+                              return (<WinnerListItem {...this.props} {...configObj} key={index}/>);
+                          }
+                      )
+                    }
                 </View>
             </View>
         </View>);
@@ -58,7 +203,7 @@ function mapDispatchToProps(dispatch) {
   
 function mapStateToProps(state) {
     return {
-        selectdLevel: state.awardLevel
+        selectedLevel: state.awardLevel
     };
   }
   

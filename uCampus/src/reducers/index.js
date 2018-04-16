@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
 import AwardLevel from './reducer_awardLevel';
+import Region from './reducer_region';
+import Stage from './reducer_stage';
 
 const appReducer = combineReducers({
-    awardLevel: AwardLevel
+    awardLevel: AwardLevel,
+    region: Region,
+    stage: Stage
 });
 
 

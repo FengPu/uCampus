@@ -15,14 +15,20 @@ import Region from './activityModules/Region';
 import Review from './activityModules/Review';
 */
 //import {Grade} from './activityModules/Grade';
-import { About, Admission, Books, Grade, Guess, QA, Region } from './activityModules';
+import { About, Admission, Books, Grade, 
+         Guess, QA, Region, RegionFinal
+          } from './activityModules';
+import DataList from './activityModules/DataList';
 import Award from './activityModules/Award';
+import AwardFinal from './activityModules/AwardFinal';
 import Review from './activityModules/Review';
+import FinalButton from './activityModules/utilities/FinalButton';
 import Leaf from './activityModules/Leaf';
+import WinnerList from './activityModules/WinnerList';
 import NavigationBar from '../NavigationBar';
 import ActivityScreen from './ActivityScreen';
 
-const headerFontColor = 'blue';
+const headerFontColor = '#2D82C6';
 const styles = {
     headerLeft: {
         display: 'flex',
@@ -35,6 +41,7 @@ const styles = {
     }
 }
 
+
 const ActivityStackComponent = StackNavigator({
     ActivityScreen: { screen: ActivityScreen,
         navigationOptions: {
@@ -43,11 +50,11 @@ const ActivityStackComponent = StackNavigator({
                              onPress={ () => {} } />,
         }
      },
-    Leaf: { screen: Leaf,             
+     WinnerList: {  screen: WinnerList,             
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="123"
+                             title=""
                              onPress={ () => {
                                 } } />,
         headerLeft: <TouchableOpacity 
@@ -60,7 +67,85 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> {navigation.state.params.title} </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+
+    },
+    Leaf: { screen: Leaf,             
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title=""
+                             onPress={ () => {
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate(navigation.state.params.back)}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> {navigation.state.params.title} </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    DataList: { screen: DataList,             
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <FinalButton context={navigation.state.params.context} {...{navigation}}/>,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate(navigation.state.params.back)}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -88,7 +173,7 @@ const ActivityStackComponent = StackNavigator({
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="123"
+                             title=""
                              onPress={ () => {
                                 } } />,
         headerLeft: <TouchableOpacity 
@@ -101,7 +186,7 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -129,7 +214,7 @@ const ActivityStackComponent = StackNavigator({
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="Refresh"
+                             title=""
                              onPress={ () => {
                                 } } />,
         headerLeft: <TouchableOpacity 
@@ -142,7 +227,7 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -165,14 +250,15 @@ const ActivityStackComponent = StackNavigator({
             }
         }) 
     },
-    //得獎名單
+    //得獎名單 初賽
     Award: { screen: Award,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="Refresh"
-                             onPress={ () => {
-                                } } />,
+                        title="決賽"
+                        onPress={ () => {
+                            navigation.navigate('AwardFinal')
+                        } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -183,7 +269,7 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -196,7 +282,49 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 得獎名單 </Text>,
+               }}> 初賽得獎名單 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //得獎名單 決賽
+    AwardFinal: { screen: AwardFinal,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                        title="初賽"
+                        onPress={ () => {
+                            navigation.navigate('Award')
+                        } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 決賽得獎名單 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -211,7 +339,7 @@ const ActivityStackComponent = StackNavigator({
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="Refresh"
+                             title=""
                              onPress={ () => {
                                 } } />,
         headerLeft: <TouchableOpacity 
@@ -224,7 +352,7 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -247,14 +375,11 @@ const ActivityStackComponent = StackNavigator({
             }
         }) 
     },
-    //成績
+    //成績 初賽
     Grade: { screen: Grade,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <Button
-                             title="Refresh"
-                             onPress={ () => {
-                                } } />,
+        headerRight: <FinalButton />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -265,7 +390,7 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -293,7 +418,7 @@ const ActivityStackComponent = StackNavigator({
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="Refresh"
+                             title=""
                              onPress={ () => {
                                 } } />,
         headerLeft: <TouchableOpacity 
@@ -306,7 +431,7 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -334,7 +459,7 @@ const ActivityStackComponent = StackNavigator({
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="Refresh"
+                             title=""
                              onPress={ () => {
                                 } } />,
         headerLeft: <TouchableOpacity 
@@ -347,7 +472,7 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -370,13 +495,14 @@ const ActivityStackComponent = StackNavigator({
             }
         }) 
     },
-    //賽區資訊 
+    //賽區資訊 初賽
     Region: { screen: Region,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="Refresh"
+                             title="決賽"
                              onPress={ () => {
+                                navigation.navigate('RegionFinal')
                                 } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
@@ -388,7 +514,49 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: <Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 賽區資訊 </Text>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //賽區資訊 決賽
+    RegionFinal: { screen: RegionFinal,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <Button
+                             title="初賽"
+                             onPress={ () => {
+                                navigation.navigate('Region')
+                                } } />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('ActivityScreen')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -416,7 +584,7 @@ const ActivityStackComponent = StackNavigator({
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
         headerRight: <Button
-                             title="Refresh"
+                             title=""
                              onPress={ () => {
                                 } } />,
         headerLeft: <TouchableOpacity 
@@ -429,7 +597,7 @@ const ActivityStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>test</Text>
+                            <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: <Text
@@ -452,7 +620,6 @@ const ActivityStackComponent = StackNavigator({
             }
         }) 
     }
-
   },
   {
     navigationOptions: {
