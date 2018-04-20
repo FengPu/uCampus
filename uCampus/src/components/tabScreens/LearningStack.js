@@ -26,7 +26,7 @@ import FinalButton from './activityModules/utilities/FinalButton';
 import Leaf from './activityModules/Leaf';
 import WinnerList from './activityModules/WinnerList';
 import NavigationBar from '../NavigationBar';
-import ActivityScreen from './ActivityScreen';
+import LearningScreen from './LearningScreen';
 
 const headerFontColor = '#2D82C6';
 const styles = {
@@ -42,16 +42,21 @@ const styles = {
 }
 
 
-const ActivityStackComponent = StackNavigator({
-    ActivityScreen: { screen: ActivityScreen,
+const LearningStackComponent = StackNavigator({
+    ActivityScreen: { screen: LearningScreen,
         navigationOptions: {
-            headerLeft: <View></View>,
+            headerLeft: <Button
+                             title=""
+                             onPress={ () => {} } />,
         }
      },
      WinnerList: {  screen: WinnerList,             
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View />,
+        headerRight: <Button
+                             title=""
+                             onPress={ () => {
+                                } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate(navigation.state.params.back)}
                         >
@@ -65,13 +70,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center'
-            }}
-        ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -81,14 +80,13 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> {navigation.state.params.title} </Text></View>,
+               }}> {navigation.state.params.title} </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
             },
             headerTitleStyle: {
-                textAlign: 'center',
-                alignSelf: 'center'
+               alignSelf: 'center'
             }
         }) 
 
@@ -96,7 +94,10 @@ const ActivityStackComponent = StackNavigator({
     Leaf: { screen: Leaf,             
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View />,
+        headerRight: <Button
+                             title=""
+                             onPress={ () => {
+                                } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate(navigation.state.params.back)}
                         >
@@ -110,13 +111,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-            <View
-                style={{
-                    flex: 1,
-                    alignItems: 'center'
-                }}
-            ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -126,7 +121,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> {navigation.state.params.title} </Text></View>,
+               }}> {navigation.state.params.title} </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -153,13 +148,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-            <View
-                style={{
-                    flex: 1,
-                    alignItems: 'center'
-                }}
-            ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -169,7 +158,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> {navigation.state.params.title} </Text></View>,
+               }}> {navigation.state.params.title} </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -183,51 +172,10 @@ const ActivityStackComponent = StackNavigator({
     About: { screen: About,             
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View />,
-        headerLeft: <TouchableOpacity 
-                        onPress={() => navigation.navigate('ActivityScreen')}
-                        >
-                        <View style={styles.headerLeft}>
-                            <Icon 
-                            name="angle-left" 
-                            size={30} 
-                            style={{marginRight: 5, marginLeft: 5}}
-                            color={headerFontColor}>
-                            </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
-                        </View>
-                    </TouchableOpacity>,
-        headerTitle: 
-            <View
-            style={{
-                flex: 1,
-                alignItems: 'center'
-            }}
-            ><Text
-               style={{
-                   backgroundColor: 'white',
-                   alignSelf: 'center',
-                   textAlignVertical: 'center',
-                   fontSize: 16, 
-                   fontWeight: 'bold'
-               }}
-               onPress={() => {
-                   
-               }}> 關於比賽 </Text></View>,
-            headerStyle: { 
-              height: 50,
-              backgroundColor: 'white'
-            },
-            headerTitleStyle: {
-               alignSelf: 'center'
-            }
-        }) 
-    },
-    //入場證 
-    Admission: { screen: Admission,                 
-        navigationOptions: ({ navigation }) => ({
-        tabBarVisible: false,
-        headerRight: <View />,
+        headerRight: <Button
+                             title=""
+                             onPress={ () => {
+                                } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -251,7 +199,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 入場證 </Text>,
+               }}> 關於比賽 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -265,12 +213,11 @@ const ActivityStackComponent = StackNavigator({
     Award: { screen: Award,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <TouchableOpacity
-                        style={{backgroundColor: 'transparent'}}        
+        headerRight: <Button
+                        title="決賽"
                         onPress={ () => {
                             navigation.navigate('AwardFinal')
-                        } } ><View style={{margin: 5}}
-                        ><Text style={styles.headerLeftText}>決賽</Text></View></TouchableOpacity>,
+                        } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -284,13 +231,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-            <View
-                style={{
-                    flex: 1,
-                    alignItems: 'center'
-                }}
-            ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -300,7 +241,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 初賽得獎名單 </Text></View>,
+               }}> 初賽得獎名單 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -314,12 +255,11 @@ const ActivityStackComponent = StackNavigator({
     AwardFinal: { screen: AwardFinal,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <TouchableOpacity
-                        style={{backgroundColor: 'transparent'}}        
+        headerRight: <Button
+                        title="初賽"
                         onPress={ () => {
                             navigation.navigate('Award')
-                        } } ><View style={{margin: 5}}
-                        ><Text style={styles.headerLeftText}>初賽</Text></View></TouchableOpacity>,
+                        } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -333,13 +273,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-            <View
-                style={{
-                    flex: 1,
-                    alignItems: 'center'
-                }}
-            ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -349,7 +283,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 決賽得獎名單 </Text></View>,
+               }}> 決賽得獎名單 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -363,7 +297,10 @@ const ActivityStackComponent = StackNavigator({
     Books: { screen: Books,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View />,
+        headerRight: <Button
+                             title=""
+                             onPress={ () => {
+                                } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -377,13 +314,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center'
-            }}
-        ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -393,95 +324,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 作文專書 </Text></View>,
-            headerStyle: { 
-              height: 50,
-              backgroundColor: 'white'
-            },
-            headerTitleStyle: {
-               alignSelf: 'center'
-            }
-        }) 
-    },
-    //成績 初賽
-    Grade: { screen: Grade,                 
-        navigationOptions: ({ navigation }) => ({
-        tabBarVisible: false,
-        headerRight: <FinalButton />,
-        headerLeft: <TouchableOpacity 
-                        onPress={() => navigation.navigate('ActivityScreen')}
-                        >
-                        <View style={styles.headerLeft}>
-                            <Icon 
-                            name="angle-left" 
-                            size={30} 
-                            style={{marginRight: 5, marginLeft: 5}}
-                            color={headerFontColor}>
-                            </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
-                        </View>
-                    </TouchableOpacity>,
-        headerTitle: 
-            <View
-                style={{
-                    flex: 1,
-                    alignItems: 'center'
-                }}
-            ><Text
-               style={{
-                   backgroundColor: 'white',
-                   alignSelf: 'center',
-                   textAlignVertical: 'center',
-                   fontSize: 16, 
-                   fontWeight: 'bold'
-               }}
-               onPress={() => {
-                   
-               }}> 成績 </Text></View>,
-            headerStyle: { 
-              height: 50,
-              backgroundColor: 'white'
-            },
-            headerTitleStyle: {
-               alignSelf: 'center'
-            }
-        }) 
-    },
-    //考前猜猜
-    Guess: { screen: Guess,                 
-        navigationOptions: ({ navigation }) => ({
-        tabBarVisible: false,
-        headerRight: <View />,
-        headerLeft: <TouchableOpacity 
-                        onPress={() => navigation.navigate('ActivityScreen')}
-                        >
-                        <View style={styles.headerLeft}>
-                            <Icon 
-                            name="angle-left" 
-                            size={30} 
-                            style={{marginRight: 5, marginLeft: 5}}
-                            color={headerFontColor}>
-                            </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
-                        </View>
-                    </TouchableOpacity>,
-        headerTitle: 
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center'
-            }}
-        ><Text
-               style={{
-                   backgroundColor: 'white',
-                   alignSelf: 'center',
-                   textAlignVertical: 'center',
-                   fontSize: 16, 
-                   fontWeight: 'bold'
-               }}
-               onPress={() => {
-                   
-               }}> 考前猜猜 </Text></View>,
+               }}> 作文專書 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -492,10 +335,13 @@ const ActivityStackComponent = StackNavigator({
         }) 
     },
     //常見問題 
-    QA: { screen: QA,                 
+    AI: { screen: QA,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View />,
+        headerRight: <Button
+                             title=""
+                             onPress={ () => {
+                                } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -509,13 +355,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center'
-            }}
-        ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -525,7 +365,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 常見問題 </Text></View>,
+               }}> 考前暖身 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -539,12 +379,11 @@ const ActivityStackComponent = StackNavigator({
     Region: { screen: Region,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <TouchableOpacity
-                        style={{backgroundColor: 'transparent'}}        
-                        onPress={ () => {
-                            navigation.navigate('RegionFinal')
-                        } } ><View style={{margin: 5}}
-                        ><Text style={styles.headerLeftText}>決賽</Text></View></TouchableOpacity>,
+        headerRight: <Button
+                             title="決賽"
+                             onPress={ () => {
+                                navigation.navigate('RegionFinal')
+                                } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -558,13 +397,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center'
-            }}
-        ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -574,7 +407,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 賽區資訊 </Text></View>,
+               }}> 賽區資訊 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -588,12 +421,11 @@ const ActivityStackComponent = StackNavigator({
     RegionFinal: { screen: RegionFinal,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <TouchableOpacity
-                        style={{backgroundColor: 'transparent'}}        
-                        onPress={ () => {
-                            navigation.navigate('Region')
-                        } } ><View style={{margin: 5}}
-                        ><Text style={styles.headerLeftText}>初賽</Text></View></TouchableOpacity>,
+        headerRight: <Button
+                             title="初賽"
+                             onPress={ () => {
+                                navigation.navigate('Region')
+                                } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -607,13 +439,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center'
-            }}
-        ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -623,7 +449,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 賽區資訊 </Text></View>,
+               }}> 賽區資訊 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -637,7 +463,10 @@ const ActivityStackComponent = StackNavigator({
     Review: { screen: Review,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View />,
+        headerRight: <Button
+                             title=""
+                             onPress={ () => {
+                                } } />,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('ActivityScreen')}
                         >
@@ -651,13 +480,7 @@ const ActivityStackComponent = StackNavigator({
                             <Text style={styles.headerLeftText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
-        headerTitle: 
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center'
-            }}
-        ><Text
+        headerTitle: <Text
                style={{
                    backgroundColor: 'white',
                    alignSelf: 'center',
@@ -667,7 +490,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 題目回顧 </Text></View>,
+               }}> 題目回顧 </Text>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -680,30 +503,23 @@ const ActivityStackComponent = StackNavigator({
   },
   {
     navigationOptions: {
-            headerLeft: (<View></View>), 
-            headerRight: (<View></View>),
-            headerTitle: <View
-                style={{
-                    flex: 1,
-                    alignItems: 'center'
-                }}
-                ><Text
+            headerTitle: <Text
                style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
                    textAlignVertical: 'center',
                    fontSize: 16, 
                    fontWeight: 'bold'
                }}
                onPress={() => {
                    
-               }}> 聯合盃 </Text></View>,
+               }}> 學習 </Text>,
             headerStyle: { 
               height: 50,
-              width: '100%',
               backgroundColor: 'white'
             },
             headerTitleStyle: {
-                textAlign: 'center',
-                alignSelf: 'center'
+               alignSelf: 'center'
             }
         }
   },
@@ -712,17 +528,5 @@ const ActivityStackComponent = StackNavigator({
     headerMode: 'none'
   });
 
-/*
-//Wrap the StackNavigator inside a class will cause tabBarVisible config. inactivate
-class ActivityStack extends Component {
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return <ActivityStackComponent screenProps={this.props}/>;
-    }
 
-}
-*/
-
-export default ActivityStackComponent;
+export default LearningStackComponent;

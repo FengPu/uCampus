@@ -42,7 +42,7 @@ class Review extends Component{
         let configObjs=[
             [
             {
-                section: 'section1',
+                section: '國小中年級(第十屆聯合盃作文大賽-初賽題目)',
                 data: [{
                     title: '台北市初賽',
                     back: 'Review',
@@ -61,7 +61,7 @@ class Review extends Component{
                 }]
             },
             {
-                section: 'section2',
+                section: '國小高年級(第十屆聯合盃作文大賽-初賽題目)',
                 data: [{
                     title: commonTitle,
                     back: 'QA',
@@ -82,7 +82,7 @@ class Review extends Component{
     ],
     [
         {
-            section: 'section1',
+            section: '國小高年級(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
                 title: '台北市初賽',
                 back: 'Review',
@@ -101,7 +101,7 @@ class Review extends Component{
             }]
         },
         {
-            section: 'section2',
+            section: '國八(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
                 title: commonTitle,
                 back: 'QA',
@@ -122,7 +122,7 @@ class Review extends Component{
     ],
     [
         {
-            section: 'section1',
+            section: '國七(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
                 title: '台北市初賽',
                 back: 'Review',
@@ -136,7 +136,7 @@ class Review extends Component{
             }]
         },
         {
-            section: 'section2',
+            section: '國九(第十屆聯合盃作文大賽-決賽題目)',
             data: [{
                 title: commonTitle,
                 back: 'QA',
@@ -152,7 +152,32 @@ class Review extends Component{
     ],
     [
         {
-            section: 'section1',
+            section: '國八(第十屆聯合盃作文大賽-初賽題目)',
+            data: [{
+                title: '台北市初賽',
+                back: 'Review',
+                itemTitle: '台北市初賽',
+                pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
+            }]
+        },
+        {
+            section: '高中(第十屆聯合盃作文大賽-決賽題目)',
+            data: [{
+                title: commonTitle,
+                back: 'QA',
+                itemTitle: 'QA4',
+                pageUrl: 'https://www.google.com'
+            },{
+                title: commonTitle,
+                back: 'QA',
+                itemTitle: 'QA5',
+                pageUrl: 'https://www.yahoo.com'
+            }]
+        }
+    ],
+    [
+        {
+            section: '國九(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
                 title: '台北市初賽',
                 back: 'Review',
@@ -177,32 +202,7 @@ class Review extends Component{
     ],
     [
         {
-            section: 'section1',
-            data: [{
-                title: '台北市初賽',
-                back: 'Review',
-                itemTitle: '台北市初賽',
-                pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
-            }]
-        },
-        {
-            section: 'section2',
-            data: [{
-                title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA4',
-                pageUrl: 'https://www.google.com'
-            },{
-                title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA5',
-                pageUrl: 'https://www.yahoo.com'
-            }]
-        }
-    ],
-    [
-        {
-            section: 'section1',
+            section: '高中(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
                 title: '台北市初賽',
                 back: 'Review',

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { TabNavigator, TabBarBottom, StackNavigator } from 'react-navigation';
-import LearningScreen from './tabScreens/LearningScreen';
+import LearningStack from './tabScreens/LearningStack';
 import ActivityStack from './tabScreens/ActivityStack';
 import MessageScreen from './tabScreens/MessageScreen';
 import SettingsScreen from './tabScreens/SettingsScreen';
@@ -10,8 +10,8 @@ import SettingsScreen from './tabScreens/SettingsScreen';
 const NavigationBar = TabNavigator(
     {
       訊息: { screen: MessageScreen },
-      學習: { screen: LearningScreen },
-      聯合盃: {  screen: ActivityStack },
+      學習: { screen: LearningStack },
+      聯合盃: { screen: ActivityStack },
       設定: { screen: SettingsScreen }
     },
     {

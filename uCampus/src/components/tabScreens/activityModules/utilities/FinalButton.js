@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectLevel, selectStage } from '../../../../actions/index';
 
-const grayBackground = '#F1F1F1';
+const grayBackground = '#F1F1F1'; //
 const styles = {
     buttonStyle: {
         color: '#2D82C6',
