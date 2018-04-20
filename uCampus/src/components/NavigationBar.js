@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { TabNavigator, TabBarBottom, StackNavigator } from 'react-navigation';
@@ -27,26 +28,48 @@ const NavigationBar = TabNavigator(
           }*/
           switch(routeName){
               case '訊息':
-                iconName = 'envelope';
-                break;
+                iconName = '../images/tabs/news.png';
+                return(<Image
+                  style={{ tintColor:tintColor}}
+                  source={require('../images/tabs/news.png')}
+                  tintColor={tintColor}
+                />);
+                
               case '學習':
-                iconName = 'book';
-                break;
+                iconName = '../images/tabs/learning.png';
+                return(<Image
+                  style={{ tintColor:tintColor}}
+                  source={require('../images/tabs/learning.png')}
+                  tintColor={tintColor}
+                />);
               case '設定':
-                iconName = 'cog';
-                break;
+                iconName = '../images/tabs/setting.png';
+                return(<Image
+                  style={{ tintColor:tintColor}}
+                  source={require('../images/tabs/setting.png')}
+                  tintColor={tintColor}
+                />);
               case '聯合盃':
-                iconName = 'apple';
-                break;
+                iconName = '../images/tabs/udn.png';
+                return(<Image
+                  style={{ tintColor:tintColor}}
+                  source={require('../images/tabs/udn.png')}
+                  tintColor={tintColor}
+                />);
               default:
-                iconName = 'rocket';
-                break;
+                iconName = '../images/tabs/rocket.png';
+                return(<Image
+                  style={{ tintColor:tintColor}}
+                  source={require('../images/tabs/news.png')}
+                  tintColor={tintColor}
+                />);
           }
   
           // You can return any component that you like here! We usually use an
           // icon component from react-native-vector-icons
           //return (<Ionicons name={iconName} size={25} color={tintColor} />);
-          return (<Icon name={iconName} size={25} color={tintColor} />);
+          //return (<Icon name={iconName} size={25} color={tintColor} />);
+          
         },
       }),
       tabBarOptions: {
