@@ -66,7 +66,7 @@ class LinkItem extends Component{
                     if (supported) {
                       Linking.openURL(this.props.pageUrl);
                     } else {
-                      console.log("Don't know how to open URI: " + this.props.pageUrl);
+                      //console.log("Don't know how to open URI: " + this.props.pageUrl);
                     }
                   });
               }

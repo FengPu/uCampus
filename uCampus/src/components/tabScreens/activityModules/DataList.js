@@ -115,7 +115,7 @@ class DataList extends Component{
         }
     }
     render(){
-        console.log(this.props.navigation.state.params.pageUrl);
+        //console.log(this.props.navigation.state.params.pageUrl);
         return(
         <ScrollView >
             <View style={styles.content}>

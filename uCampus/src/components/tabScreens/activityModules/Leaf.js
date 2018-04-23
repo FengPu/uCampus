@@ -15,7 +15,7 @@ export default class Leaf extends Component{
     }
     //signup-container-header
     render(){
-        console.log(this.props.navigation.state.params.pageUrl);
+        //console.log(this.props.navigation.state.params.pageUrl);
         return(
         <View style={{flex: 1}}>
             <View style={styles.content}>

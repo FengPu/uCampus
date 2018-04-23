@@ -35,7 +35,7 @@ class FinalButton extends Component{
     }
 
     toggleButton(){
-        console.log(this.state.statusButton);
+        //console.log(this.state.statusButton);
         if(this.state.statusButton == '初賽'){
             this.setState({ statusButton : '決賽'});
             this.props.selectStage('tryout');

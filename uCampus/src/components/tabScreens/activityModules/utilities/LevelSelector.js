@@ -103,7 +103,7 @@ class LevelSelector extends Component{
     }
 
     render(){
-        console.log(this.state.selectedLevel);
+        //console.log(this.state.selectedLevel);
         return(
             <View style={styles.levels}>
                   <View style={styles.levelTop}>

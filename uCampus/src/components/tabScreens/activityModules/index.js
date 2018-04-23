@@ -11,3 +11,7 @@ export * from './Leaf';
 export * from './DataList';
 export * from './RegionFinal';
 export * from './AwardFinal';
+export * from './Stars';
+export * from './ClassRoom';
+export * from './LevelUp';
+export * from './Poll';

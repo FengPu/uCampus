@@ -43,12 +43,12 @@ export default class LearningScreen extends Component{
         super(props);
         // context is used on header's
         this.activityModules = [
-            {target: 'About', routeName: 'About', title: '關於比賽1', icon: activityAbout},
-            {target: 'Region', routeName: 'Region', title: '賽區資訊2', icon: activityRegion},
-            {target: 'Review', routeName: 'Review', title: '題目回顧3', icon: activityReview},
-            {target: 'Award', routeName: 'Award', title: '得獎名單4', icon: activityAward, context: 'Award'},
-            {target: 'Books', routeName: 'Books', title: '作文專書5', icon: activityBooks},
-            {target: 'AI', routeName: 'AI', title: '考前暖身', icon: activityQA}
+            {target: 'Stars', routeName: 'Stars', title: '寫作新星', icon: activityAbout},
+            {target: 'LevelUp', routeName: 'LevelUp', title: '閱讀練功坊', icon: activityRegion},
+            {target: 'Poll', routeName: 'Poll', title: '校園民調', icon: activityReview},
+            {target: 'ClassRoom', routeName: 'ClassRoom', title: '寫作教室', icon: activityAward, context: 'Award'},
+            {target: 'MarkingEssay', routeName: 'MarkingEssay', title: '批改作文', icon: activityBooks},
+            {target: 'WarmUp', routeName: 'WarmUp', title: '考前暖身', icon: activityQA}
         ]
 
     }
