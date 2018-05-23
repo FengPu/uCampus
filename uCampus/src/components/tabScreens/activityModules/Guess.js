@@ -12,7 +12,7 @@ const styles = {
 class Guess extends Component{
     render(){
         let configObjs=[{
-            title: '考前猜猜',
+            title: '考前暖身',
             pageUrl: 'https://ucampusapp.weebly.com/Guess_1.html',
             back: 'Guess',
             itemTitle: '考前猜題分析',

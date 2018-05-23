@@ -11,8 +11,8 @@ import SettingsScreen from './tabScreens/SettingsScreen';
 const NavigationBar = TabNavigator(
     {
       訊息: { screen: MessageScreen },
-      學習: { screen: LearningStack },
-      聯合盃: { screen: ActivityStack },
+      學習: { screen:  LearningStack }, //LearningStack
+      聯合盃: { screen: ActivityStack }, //ActivityStack
       設定: { screen: SettingsScreen }
     },
     {

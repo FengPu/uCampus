@@ -153,4 +153,4 @@ function mapStateToProps(state) {
     };
   }
   
-  export default connect(mapStateToProps, selectLevel)(DataList);
+  export default connect(mapStateToProps, mapDispatchToProps)(DataList);

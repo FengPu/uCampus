@@ -447,7 +447,7 @@ const ActivityStackComponent = StackNavigator({
             }
         }) 
     },
-    //考前猜猜
+    //考前暖身
     Guess: { screen: Guess,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
@@ -481,7 +481,7 @@ const ActivityStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 考前猜猜 </Text></View>,
+               }}> 考前暖身 </Text></View>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'

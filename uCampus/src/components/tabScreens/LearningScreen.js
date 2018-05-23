@@ -11,6 +11,7 @@ import NavigationBar from '../NavigationBar';
 import { activityAbout, activityAdmission, activityAward, activityBooks, activityGrade,
          activityGuess, activityQA, activityRegion, activityReview } from '../../images/images';
 
+import { learningPoll, learningWrite, learningRead, learningVideo, learningStar } from '../../images/images';
 const uWidth = Dimensions.get('window').width;
 const uHeight = Dimensions.get('window').height;
 const mWidth = Math.floor((uWidth-12)/3);
@@ -43,12 +44,12 @@ export default class LearningScreen extends Component{
         super(props);
         // context is used on header's
         this.activityModules = [
-            {target: 'Stars', routeName: 'Stars', title: '寫作新星', icon: activityAbout},
-            {target: 'LevelUp', routeName: 'LevelUp', title: '閱讀練功坊', icon: activityRegion},
-            {target: 'Poll', routeName: 'Poll', title: '校園民調', icon: activityReview},
-            {target: 'ClassRoom', routeName: 'ClassRoom', title: '寫作教室', icon: activityAward, context: 'Award'},
+            {target: 'Stars', routeName: 'Stars', title: '寫作新星', icon: learningStar},
+            {target: 'LevelUp', routeName: 'LevelUp', title: '閱讀練功坊', icon: learningRead},
+            {target: 'Poll', routeName: 'Poll', title: '校園民調', icon: learningPoll},
+            {target: 'ClassRoom', routeName: 'ClassRoom', title: '寫作教室', icon: learningWrite, context: 'Award'},
             {target: 'MarkingEssay', routeName: 'MarkingEssay', title: '批改作文', icon: activityBooks},
-            {target: 'WarmUp', routeName: 'WarmUp', title: '考前暖身', icon: activityQA}
+            {target: 'WarmUp', routeName: 'WarmUp', title: '寫作練習', icon: learningWrite}
         ]
 
     }

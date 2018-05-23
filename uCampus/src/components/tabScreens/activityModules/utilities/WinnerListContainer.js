@@ -502,4 +502,4 @@ function mapStateToProps(state) {
     };
   }
   
-  export default connect(mapStateToProps, selectLevel)(WinnerListContainer);
+  export default connect(mapStateToProps, mapDispatchToProps)(WinnerListContainer);

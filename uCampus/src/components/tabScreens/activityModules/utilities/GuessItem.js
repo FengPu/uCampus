@@ -95,6 +95,6 @@ function mapStateToProps(state) {
     };
   }
   
-  export default connect(mapStateToProps, selectLevel)(GuessItem);
+  export default connect(mapStateToProps, mapDispatchToProps)(GuessItem);
 
   

@@ -275,6 +275,6 @@ function mapStateToProps(state) {
     };
   }
   
-  export default connect(mapStateToProps, selectLevel)(Review);
+  export default connect(mapStateToProps, mapDispatchToProps)(Review);
 
   

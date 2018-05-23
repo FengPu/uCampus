@@ -18,7 +18,9 @@
 {
   NSURL *jsCodeLocation;
 
+  //js bundle problem: comment the line below, and uncomment the line next to the line below
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  //jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"uCampus"

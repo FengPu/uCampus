@@ -49,7 +49,7 @@ export default class ActivityScreen extends Component{
             {target: 'Award', routeName: 'Award', title: '得獎名單', icon: activityAward, context: 'Award'},
             {target: 'Books', routeName: 'Books', title: '作文專書', icon: activityBooks},
             {target: 'QA', routeName: 'QA', title: '常見問題', icon: activityQA},           
-            {target: 'Guess', routeName: 'Guess', title: '考前猜猜', icon: activityGuess},
+            {target: 'Guess', routeName: 'Guess', title: '考前暖身', icon: activityGuess},
             {target: 'Grade', routeName: 'DataList', title: '初賽成績', icon: activityGrade, 
               back: 'ActivityScreen', context: 'Grade', titleName: '成績'},
             {target: 'Admission', routeName: 'DataList', title: '初賽入場證', icon: activityAdmission, 

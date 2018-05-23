@@ -99,6 +99,6 @@ function mapStateToProps(state) {
     };
   }
   
-  export default connect(mapStateToProps, selectLevel)(LinkItem);
+  export default connect(mapStateToProps, mapDispatchToProps)(LinkItem);
 
   

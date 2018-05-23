@@ -207,6 +207,6 @@ function mapStateToProps(state) {
     };
   }
   
-  export default connect(mapStateToProps, selectLevel)(Award);
+  export default connect(mapStateToProps, mapDispatchToProps)(Award);
 
   

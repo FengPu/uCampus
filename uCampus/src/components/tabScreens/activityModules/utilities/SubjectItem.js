@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setCurrentWritingContext } from '../../../../actions/index';
 
 const styles = {
     content: {
@@ -28,16 +31,24 @@ class SubjectItem extends Component{
         super(props);
     }
     render(){
-        let content = <Text>作文</Text>
+        let content = <Text>{this.props.questionTitle}</Text>;
+        let currentWritingContext = {
+            questionTitle: this.props.questionTitle, 
+            questionPrompt: this.props.questionPrompt
+        }
         return(
             <TouchableOpacity 
                 onPress={
                     ()=>{
-                    this.props.navigation.navigate('Leaf', { 
-                        title: this.props.title, 
-                        back: this.props.back,
-                        pageUrl: this.props.pageUrl
-                        })
+                    Promise.all(
+                        this.props.setCurrentWritingContext(currentWritingContext)
+                    ).then(
+                        this.props.navigation.navigate('WarmUpQuestion', { 
+                            title: this.props.title, 
+                            back: this.props.back,
+                            pageUrl: this.props.pageUrl
+                            })
+                    )
                     }
                     }
                 >
@@ -50,4 +61,16 @@ class SubjectItem extends Component{
     }
 }
 
-export default SubjectItem;
+function mapDispatchToProps(dispatch) {
+
+    return bindActionCreators({ setCurrentWritingContext }, dispatch);
+  }
+  
+  
+function mapStateToProps(state) {
+    return {
+        selectedLevel: state.awardLevel
+    };
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(SubjectItem);

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		GNOX7Aw9SLnSxoeExZ6VkTfMnhg=
+		CNEZdGL3Njvkkaizpm12c3E8bFE=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -71,7 +71,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		N6ZRGg48y17LdQhdVIO7GCsR7qA=
+		SgF7WUHheeUEAUulfK/sNzXMTRk=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -95,23 +95,23 @@
 		</data>
 		<key>PlugIns/uCampusTests.xctest.dSYM/Contents/Info.plist</key>
 		<data>
-		I3X80D48ELRgaSMvpC+jgCRVg90=
+		dMqQ3BUEZSHYi/VObHc7CEmUilc=
 		</data>
 		<key>PlugIns/uCampusTests.xctest.dSYM/Contents/Resources/DWARF/uCampusTests</key>
 		<data>
-		TstW7y3pKu5fNJ/bSOEDTprfL9Q=
+		IYmTn7weMTauhrKsivBWJs8plU8=
 		</data>
 		<key>PlugIns/uCampusTests.xctest/Info.plist</key>
 		<data>
-		c0hbhL1RAYABvCeD/Jhgcs73OhM=
+		dfyiNmT+XAGvH6PkZiFbtA7HJ7M=
 		</data>
 		<key>PlugIns/uCampusTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		1c/XhrQQvCg4rFud+O1PRdkMEQc=
+		6J4QO43n+JPV9xnCBKhecXs+U5w=
 		</data>
 		<key>PlugIns/uCampusTests.xctest/uCampusTests</key>
 		<data>
-		31qT2kTEOD4am35UqpE2QVUTmsw=
+		rbFvBZ8QdcbSPJYxNoe+8aJ/cAg=
 		</data>
 		<key>SimpleLineIcons.ttf</key>
 		<data>
@@ -121,6 +121,10 @@
 		<data>
 		C9pZx7zT05J94EfgkYdaRCi/0as=
 		</data>
+		<key>main.jsbundle</key>
+		<data>
+		ovmEvyC1y5LfmZiU5JxqIjW0iQw=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -128,11 +132,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GNOX7Aw9SLnSxoeExZ6VkTfMnhg=
+			CNEZdGL3Njvkkaizpm12c3E8bFE=
 			</data>
 			<key>hash2</key>
 			<data>
-			u+T17NvH45aU6Hz8kLEOTroBbnoo002qH7huL0rqiec=
+			zcDiclmg1ESzUjsw04nJJhX4bteZmSnvr+n7cl5BuIc=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -339,55 +343,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			I3X80D48ELRgaSMvpC+jgCRVg90=
+			dMqQ3BUEZSHYi/VObHc7CEmUilc=
 			</data>
 			<key>hash2</key>
 			<data>
-			nldMvXt/XEhp+9HKatOTJ+QS6nAnB/j1jSPH3+qE/n4=
+			ftAH4HX4BpQ08RGTVFGmWaKZ/RwG38Wiz2F/yTrI77Q=
 			</data>
 		</dict>
 		<key>PlugIns/uCampusTests.xctest.dSYM/Contents/Resources/DWARF/uCampusTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TstW7y3pKu5fNJ/bSOEDTprfL9Q=
+			IYmTn7weMTauhrKsivBWJs8plU8=
 			</data>
 			<key>hash2</key>
 			<data>
-			wOaXT2Umz13D5bkYxPIXZJg3EplCwUHCNGfk5njliPE=
+			ens5oJxnFdMI7KE263WNN2yjjguqnoVV2a5S3ZebpFI=
 			</data>
 		</dict>
 		<key>PlugIns/uCampusTests.xctest/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c0hbhL1RAYABvCeD/Jhgcs73OhM=
+			dfyiNmT+XAGvH6PkZiFbtA7HJ7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			UxicIWnDbOa5GCEMot3tng+I/5XCREl354jED4tW9L4=
+			p1B0+5cmQBVpB66E9o3EPUOv4HqOsnpzHEoVkMIot4o=
 			</data>
 		</dict>
 		<key>PlugIns/uCampusTests.xctest/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1c/XhrQQvCg4rFud+O1PRdkMEQc=
+			6J4QO43n+JPV9xnCBKhecXs+U5w=
 			</data>
 			<key>hash2</key>
 			<data>
-			R4ApeM5MqPf392R3PgmbVt1ez2Ga/E4WGXu6sW7mEEg=
+			trfDnywuWna8L9wbkm0U4wG27k1pX2qTMMwFGH3eU2g=
 			</data>
 		</dict>
 		<key>PlugIns/uCampusTests.xctest/uCampusTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			31qT2kTEOD4am35UqpE2QVUTmsw=
+			rbFvBZ8QdcbSPJYxNoe+8aJ/cAg=
 			</data>
 			<key>hash2</key>
 			<data>
-			P3zpQxWh7abi45vD/2ez/n5wf7OXcp8UGrjWNL1GF6c=
+			kRipYNNc7mIA7Ch+iR1JQ0INFmAj8yycznfJl2qarto=
 			</data>
 		</dict>
 		<key>SimpleLineIcons.ttf</key>
@@ -410,6 +414,17 @@
 			<key>hash2</key>
 			<data>
 			17EKHr4YMOWi8I9JA7moDiwZEsDdL3O5P88r+DIhZgI=
+			</data>
+		</dict>
+		<key>main.jsbundle</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ovmEvyC1y5LfmZiU5JxqIjW0iQw=
+			</data>
+			<key>hash2</key>
+			<data>
+			nnPS33P34vxBdD8D/X6NQ7r7AJKlgs7Hji6Ssawxgog=
 			</data>
 		</dict>
 	</dict>

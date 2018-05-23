@@ -67,6 +67,6 @@ function mapStateToProps(state) {
     };
   }
   
-  export default connect(mapStateToProps, selectLevel)(ListItem);
+  export default connect(mapStateToProps, mapDispatchToProps)(ListItem);
 
   

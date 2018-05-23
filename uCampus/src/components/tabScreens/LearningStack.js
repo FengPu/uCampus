@@ -24,10 +24,24 @@ import MarkingEssay from './activityModules/MarkingEssay';
 import AwardFinal from './activityModules/AwardFinal';
 import Review from './activityModules/Review';
 import FinalButton from './activityModules/utilities/FinalButton';
+import LevelUpHamburger from './activityModules/levelUp/LevelUpHamburger';
 import Leaf from './activityModules/Leaf';
 import WinnerList from './activityModules/WinnerList';
 import NavigationBar from '../NavigationBar';
 import LearningScreen from './LearningScreen';
+
+import WarmUpQuestion from './activityModules/warmups/WarmUpQuestion';
+import WarmUpCollection from './activityModules/warmups/WarmUpCollection';
+import WarmUpTyping from './activityModules/warmups/WarmUpTyping';
+import WarmUpScore from './activityModules/warmups/WarmUpScore';
+import WarmUpCompleteButton from './activityModules/warmups/WarmUpCompleteButton';
+
+import LevelUpQuestion from './activityModules/levelUp/LevelUpQuestion';
+import LevelUpRanking from './activityModules/levelUp/LevelUpRanking';
+import LevelUpAnsweredQuestion from './activityModules/levelUp/LevelUpAnsweredQuestion';
+
+import Explaination from './activityModules/Explaination';
+import ExplainationButton from './activityModules/utilities/ExplainationButton';
 
 const headerFontColor = '#2D82C6';
 const styles = {
@@ -36,13 +50,19 @@ const styles = {
         flexDirection: 'row',
         alignItems: 'center'      
     },
-    headerLeftText: {
+    headerRight: {
+        marginRight: 5,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center'      
+    },
+    headerText: {
         fontSize: 18,
         color: headerFontColor
     }
 }
 
-
+let hamburgerState = true;
 const LearningStackComponent = StackNavigator({
     LearningScreen: { screen: LearningScreen,
         navigationOptions: {
@@ -64,7 +84,7 @@ const LearningStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
+                            <Text style={styles.headerText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: 
@@ -97,7 +117,7 @@ const LearningStackComponent = StackNavigator({
     ClassRoom: { screen: ClassRoom,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View></View>,
+        headerRight: <View/>,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('LearningScreen')}
                         >
@@ -108,7 +128,7 @@ const LearningStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
+                            <Text style={styles.headerText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: 
@@ -152,7 +172,7 @@ const LearningStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
+                            <Text style={styles.headerText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: 
@@ -181,11 +201,17 @@ const LearningStackComponent = StackNavigator({
             }
         }) 
     },
-    //考前暖身
+    //寫作練習
     WarmUp: { screen: WarmUp,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View />,
+        headerRight: <TouchableOpacity 
+                        onPress={() => navigation.navigate('WarmUpCollection')}
+                        >
+                        <View style={styles.headerRight}>
+                            <Text style={styles.headerText}>作品集</Text>
+                        </View>
+                    </TouchableOpacity>,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('LearningScreen')}
                         >
@@ -196,7 +222,7 @@ const LearningStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
+                            <Text style={styles.headerText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: 
@@ -215,7 +241,7 @@ const LearningStackComponent = StackNavigator({
                }}
                onPress={() => {
                    
-               }}> 考前暖身 </Text></View>,
+               }}> 寫作練習 </Text></View>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
@@ -229,7 +255,7 @@ const LearningStackComponent = StackNavigator({
     LevelUp: { screen: LevelUp,                 
         navigationOptions: ({ navigation }) => ({
         tabBarVisible: false,
-        headerRight: <View></View>,
+        headerRight: <LevelUpHamburger navigation={ navigation }/>,
         headerLeft: <TouchableOpacity 
                         onPress={() => navigation.navigate('LearningScreen')}
                         >
@@ -240,7 +266,7 @@ const LearningStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
+                            <Text style={styles.headerText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: 
@@ -284,7 +310,7 @@ const LearningStackComponent = StackNavigator({
                             style={{marginRight: 5, marginLeft: 5}}
                             color={headerFontColor}>
                             </Icon>
-                            <Text style={styles.headerLeftText}>返回</Text>
+                            <Text style={styles.headerText}>返回</Text>
                         </View>
                     </TouchableOpacity>,
         headerTitle: 
@@ -304,6 +330,365 @@ const LearningStackComponent = StackNavigator({
                onPress={() => {
                    
                }}> 校園民調 </Text></View>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //寫作練習: 評分
+    WarmUpScore: { screen: WarmUpScore,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <View />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate(navigation.state.params.back)}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: 
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center'
+            }}
+        ><Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 評分 </Text></View>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //寫作練習: 作答
+    WarmUpTyping: { screen: WarmUpTyping,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <WarmUpCompleteButton />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate(navigation.state.params.back)}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: 
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center'
+            }}
+        ><Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 寫作練習 </Text></View>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //寫作練習: 考題
+    WarmUpQuestion: { screen: WarmUpQuestion,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <View />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('WarmUp')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: 
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center'
+            }}
+        ><Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 寫作練習 </Text></View>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //考前練功坊: 已經回答過的問題
+    LevelUpAnsweredQuestion: { screen: LevelUpAnsweredQuestion,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <View />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('LevelUp')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: 
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center'
+            }}
+        ><Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> {navigation.state.params.title} </Text></View>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //考前練功坊: 尚未回答過的問題
+    LevelUpQuestion: { screen: LevelUpQuestion,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <View />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('LevelUp')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: 
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center'
+            }}
+        ><Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> {navigation.state.params.title} </Text></View>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //練功坊排行榜
+    LevelUpRanking: { screen: LevelUpRanking,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <ExplainationButton 
+                         navigation={navigation}
+                         target='Explaination'
+                         title='說明'
+                         back='LevelUpRanking'
+                         previousTitle='排行榜'
+                         />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('LevelUp')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: 
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center'
+            }}
+        ><Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> {navigation.state.params.title} </Text></View>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //練功坊排行榜的說明
+    Explaination: { screen: Explaination,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <View />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate(navigation.state.params.back,
+                            {title: navigation.state.params.previousTitle}
+                        )}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="close" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: 
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center'
+            }}
+        ><Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> {navigation.state.params.title} </Text></View>,
+            headerStyle: { 
+              height: 50,
+              backgroundColor: 'white'
+            },
+            headerTitleStyle: {
+               alignSelf: 'center'
+            }
+        }) 
+    },
+    //寫作練習: 作品集
+    WarmUpCollection: { screen: WarmUpCollection,                 
+        navigationOptions: ({ navigation }) => ({
+        tabBarVisible: false,
+        headerRight: <View />,
+        headerLeft: <TouchableOpacity 
+                        onPress={() => navigation.navigate('WarmUp')}
+                        >
+                        <View style={styles.headerLeft}>
+                            <Icon 
+                            name="angle-left" 
+                            size={30} 
+                            style={{marginRight: 5, marginLeft: 5}}
+                            color={headerFontColor}>
+                            </Icon>
+                            <Text style={styles.headerText}>返回</Text>
+                        </View>
+                    </TouchableOpacity>,
+        headerTitle: 
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center'
+            }}
+        ><Text
+               style={{
+                   backgroundColor: 'white',
+                   alignSelf: 'center',
+                   textAlignVertical: 'center',
+                   fontSize: 16, 
+                   fontWeight: 'bold'
+               }}
+               onPress={() => {
+                   
+               }}> 作品集 </Text></View>,
             headerStyle: { 
               height: 50,
               backgroundColor: 'white'
