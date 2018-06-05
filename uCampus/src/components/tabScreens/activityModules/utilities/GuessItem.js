@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, WebView, Linking, PixelRatio, Dimensions } from 'react-native';
+import { View, Image, Text, TouchableOpacity, WebView, Linking, PixelRatio, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -71,7 +71,9 @@ class GuessItem extends Component{
             }
             >
                 <View style={styles.item}>
-                    <View style={styles.itemThumbnail}></View>
+                <Image 
+                style={styles.itemThumbnail}
+                source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}></Image>
                     <View style={styles.itemContent}>
                         <Text style={styles.itemTitle}> {this.props.itemTitle} </Text>
                         <Text style={styles.itemAuthor}> {this.props.itemAuthor} </Text>

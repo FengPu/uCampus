@@ -22,13 +22,13 @@ const styles = {
         marginTop: 1,
         marginBottom: 1,
         borderBottomColor: '#47315a',
-        borderBottomWidth: 2,// / PixelRatio.get(),
+        borderBottomWidth: 1,// / PixelRatio.get(),
         marginLeft: 10// / PixelRatio.get()
     },
     itemThumbnail: {
         height: 70,// / PixelRatio.get(),
         width: 70,// / PixelRatio.get(),
-        backgroundColor: 'gray'
+        backgroundColor: 'white'
     },
     itemContent: {
         height: 80,// / PixelRatio.get(),
@@ -73,9 +73,9 @@ class LinkItem extends Component{
             }
         >
         <View style={styles.item}>
-            <View style={styles.itemThumbnail}>
-            
-            </View>
+            <Image 
+                style={styles.itemThumbnail}
+                source={{uri: this.props.imgSrc}}></Image>
             <View style={styles.itemContent}>
                 <Text style={styles.itemTitle}> {this.props.itemTitle} </Text>
                 <Text style={styles.itemAuthor}> {this.props.itemAuthor} </Text>

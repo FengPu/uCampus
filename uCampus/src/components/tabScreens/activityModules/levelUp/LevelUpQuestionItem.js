@@ -40,10 +40,11 @@ class LevelUpQuestionItem extends Component{
         return (
             <View style={styles.questionMargin}>
               <View style={styles.questionBorder}> 
-              <Text>{this.props.question}</Text>
+              <Text textAlign={'justify'}>{this.props.question}</Text>
               <View style={styles.questionBottomMargin}/>
               {
               <RadioForm
+                style={{ alignItems: 'flex-start' }}
                 radio_props={this.radio_props}
                 initial={-1}
                 buttonSize={10}

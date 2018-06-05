@@ -50,9 +50,9 @@ class Award extends Component{
                     itemTitle: '東區'
                 },
                 {
-                    title: '離島1',
+                    title: '離島',
                     back: 'Award',
-                    itemTitle: '離島1'
+                    itemTitle: '離島'
                 }
             ],
             [
@@ -60,50 +60,6 @@ class Award extends Component{
                 title: '北區',
                 back: 'Award',
                 itemTitle: '北區'
-                },
-                {
-                    title: '中區',
-                    back: 'Award',
-                    itemTitle: '中區'
-                },
-                {
-                    title: '南區',
-                    back: 'Award',
-                    itemTitle: '南區'
-                },
-                {
-                    title: '東區2',
-                    back: 'Award',
-                    itemTitle: '東區2'
-                }
-            ],
-            [
-                {
-                title: '北區',
-                back: 'Award',
-                itemTitle: '北區'
-                },
-                {
-                    title: '中區',
-                    back: 'Award',
-                    itemTitle: '中區'
-                },
-                {
-                    title: '南區3',
-                    back: 'Award',
-                    itemTitle: '南區3'
-                },
-                {
-                    title: '東區',
-                    back: 'Award',
-                    itemTitle: '東區'
-                }
-            ],
-            [
-                {
-                title: '北區',
-                back: 'Award',
-                itemTitle: '北區4'
                 },
                 {
                     title: '中區',
@@ -138,9 +94,9 @@ class Award extends Component{
                     itemTitle: '南區'
                 },
                 {
-                    title: '東區5',
+                    title: '東區',
                     back: 'Award',
-                    itemTitle: '東區5'
+                    itemTitle: '東區'
                 }
             ],
             [
@@ -155,9 +111,53 @@ class Award extends Component{
                     itemTitle: '中區'
                 },
                 {
-                    title: '南區6',
+                    title: '南區',
                     back: 'Award',
-                    itemTitle: '南區6'
+                    itemTitle: '南區'
+                },
+                {
+                    title: '東區',
+                    back: 'Award',
+                    itemTitle: '東區'
+                }
+            ],
+            [
+                {
+                title: '北區',
+                back: 'Award',
+                itemTitle: '北區'
+                },
+                {
+                    title: '中區',
+                    back: 'Award',
+                    itemTitle: '中區'
+                },
+                {
+                    title: '南區',
+                    back: 'Award',
+                    itemTitle: '南區'
+                },
+                {
+                    title: '東區',
+                    back: 'Award',
+                    itemTitle: '東區'
+                }
+            ],
+            [
+                {
+                title: '北區',
+                back: 'Award',
+                itemTitle: '北區'
+                },
+                {
+                    title: '中區',
+                    back: 'Award',
+                    itemTitle: '中區'
+                },
+                {
+                    title: '南區',
+                    back: 'Award',
+                    itemTitle: '南區'
                 },
                 {
                     title: '東區',

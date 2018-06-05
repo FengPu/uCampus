@@ -27,21 +27,20 @@ const instructions = Platform.select({
 */
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
-
+const store = createStoreWithMiddleware(reducer);
 export default class App extends Component{
-  render() {
+  render() {  
     return (
 
-      <Provider store={createStoreWithMiddleware(reducer)}>
+      <Provider store={store}>
         <NavigationBar/>
-      </Provider>
-   
-        
-  
-      
+      </Provider> 
     );
   }
 }
+
+export { App, store }
+
 
 const styles = StyleSheet.create({
   container: {

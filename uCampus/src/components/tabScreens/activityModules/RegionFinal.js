@@ -24,27 +24,27 @@ class RegionFinal extends Component{
                 data: [
                     {
                     title: '北區決賽',
-                    back: 'Region',
+                    back: 'RegionFinal',
                     itemTitle: '北區決賽',
                     pageUrl: 'https://ucampusapp.weebly.com/final_north.html'
                     },
                     {
                         title: '中區決賽',
-                        back: 'Region',
+                        back: 'RegionFinal',
                         itemTitle: '中區決賽',
-                        pageUrl: 'https://www.google.com'
+                        pageUrl: 'https://ucampusapp.weebly.com/final_central.html'
                     },
                     {
                         title: '南區決賽',
-                        back: 'Region',
+                        back: 'RegionFinal',
                         itemTitle: '南區決賽',
-                        pageUrl: 'https://www.google.com'
+                        pageUrl: 'https://ucampusapp.weebly.com/final_south.html'
                     },
                     {
                         title: '金門決賽',
-                        back: 'Region',
+                        back: 'RegionFinal',
                         itemTitle: '金門決賽',
-                        pageUrl: 'https://www.google.com'
+                        pageUrl: 'https://ucampusapp.weebly.com/final_kinmen.html'
                     }
                 
             ]

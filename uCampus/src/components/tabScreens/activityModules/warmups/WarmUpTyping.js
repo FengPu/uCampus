@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, ScrollView, Dimensions, Keyboard } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import axios from 'axios';
 import ActionSheet from 'react-native-actionsheet';
 import { setCurrentWritingContext } from '../../../../actions/index';
 

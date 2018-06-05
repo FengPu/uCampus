@@ -81,7 +81,7 @@ class LevelUpItem extends Component{
         let content = (
                 <View style={styles.itemTitleBox}>
                   <View style={styles.itemTitleView} >
-                    <Text style={styles.itemTitle}>如廁女權</Text> 
+                    <Text style={styles.itemTitle}>挑戰AI極限 Google要玩什麼</Text> 
                   </View>
                   <View style={styles.itemTitleMetadata} >
                     <Text style={styles.itemTitleMetadataDate}>2018/05/06.國際力</Text>

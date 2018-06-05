@@ -18,7 +18,9 @@ class LevelUpHamburger extends Component{
             type="cross" 
             active={this.state.active}
             onPress={()=>{
-                this.setState({active: !this.state.active})
+                const currentState = this.state.active;
+                this.setState({active: !currentState});
+                this.props.setLevelUpHamburgerState(!currentState);
                 this.props.navigation.navigate('LevelUpRanking', { 
                     title: '排行榜', 
                     back: 'LevelUp'

@@ -30,17 +30,17 @@ class Region extends Component{
                     title: '新北市初賽',
                     back: 'Region',
                     itemTitle: '新北市初賽',
-                    pageUrl: 'https://www.yahoo.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_new_taipei.html'
                 },{
                     title: '桃園初賽',
                     back: 'Region',
                     itemTitle: '桃園初賽',
-                    pageUrl: 'https://www.bing.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_taoyuan.html'
                 },{
                     title: '新竹初賽',
                     back: 'Region',
                     itemTitle: '新竹初賽',
-                    pageUrl: 'https://www.bing.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_hsinchu.html'
                 }]
             },
             {
@@ -49,22 +49,22 @@ class Region extends Component{
                     title: '台中初賽',
                     back: 'Region',
                     itemTitle: '台中初賽',
-                    pageUrl: 'https://www.google.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_taichung.html'
                 },{
                     title: '南投初賽',
                     back: 'Region',
                     itemTitle: '南投初賽',
-                    pageUrl: 'https://www.yahoo.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_nantou.html'
                 },{
                     title: '雲林初賽',
                     back: 'Region',
                     itemTitle: '雲林初賽',
-                    pageUrl: 'https://www.bing.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_yunlin.html'
                 },{
                     title: '嘉義初賽',
                     back: 'Region',
                     itemTitle: '嘉義初賽',
-                    pageUrl: 'https://www.bing.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_chiayi.html'
                 }]
             },
             {
@@ -73,12 +73,12 @@ class Region extends Component{
                     title: '台南初賽',
                     back: 'Region',
                     itemTitle: '台南初賽',
-                    pageUrl: 'https://www.google.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_tainan.html'
                 },{
                     title: '高雄初賽',
                     back: 'Region',
                     itemTitle: '高雄初賽',
-                    pageUrl: 'https://www.yahoo.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_kaohsiung.html'
                 }]
             },
             {
@@ -87,12 +87,21 @@ class Region extends Component{
                     title: '宜蘭初賽',
                     back: 'Region',
                     itemTitle: '宜蘭初賽',
-                    pageUrl: 'https://www.google.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_yilan.html'
                 },{
                     title: '花蓮初賽',
                     back: 'Region',
                     itemTitle: '花蓮初賽',
-                    pageUrl: 'https://www.yahoo.com'
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_hualien.html'
+                }]
+            },
+            {
+                section: '離島',
+                data: [{
+                    title: '金門初賽',
+                    back: 'Region',
+                    itemTitle: '金門初賽',
+                    pageUrl: 'https://ucampusapp.weebly.com/tryout_kinmen.html'
                 }]
             }
     ]

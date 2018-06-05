@@ -21,7 +21,7 @@ class Guess extends Component{
         },
         {
             title: '首獎作品與賞析',
-            pageUrl: 'https://www.yahoo.com',
+            pageUrl: 'https://ucampusapp.weebly.com/Guess_2.html',
             back: 'Guess',
             itemTitle: '考前猜題分析2',
             itemAuthor: '聯合盃作文大賽官方',

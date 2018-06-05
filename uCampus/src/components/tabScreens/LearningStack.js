@@ -8,14 +8,15 @@ import About from './activityModules/About';
 import Admission from './activityModules/Admission';
 import Award from './activityModules/Award';
 import Books from './activityModules/Books';
-import Grade from './activityModules/Grade';
+import Grade from './headerLeftactivityModules/Grade';
 import Guess from './activityModules/Guess';
 import QA from './activityModules/QA';
 import Region from './activityModules/Region';
 import Review from './activityModules/Review';
 */
 //import {Grade} from './activityModules/Grade';
-import { Stars, LevelUp } from './activityModules';
+import { Stars } from './activityModules';
+import LevelUp from './activityModules/LevelUp';
 import DataList from './activityModules/DataList';
 import ClassRoom from './activityModules/ClassRoom';
 import Poll from './activityModules/Poll';
@@ -41,6 +42,7 @@ import LevelUpRanking from './activityModules/levelUp/LevelUpRanking';
 import LevelUpAnsweredQuestion from './activityModules/levelUp/LevelUpAnsweredQuestion';
 
 import Explaination from './activityModules/Explaination';
+import LevelUpReturnButton from './activityModules/levelUp/LevelUpReturnButton';
 import ExplainationButton from './activityModules/utilities/ExplainationButton';
 
 const headerFontColor = '#2D82C6';
@@ -570,19 +572,7 @@ const LearningStackComponent = StackNavigator({
                          back='LevelUpRanking'
                          previousTitle='排行榜'
                          />,
-        headerLeft: <TouchableOpacity 
-                        onPress={() => navigation.navigate('LevelUp')}
-                        >
-                        <View style={styles.headerLeft}>
-                            <Icon 
-                            name="angle-left" 
-                            size={30} 
-                            style={{marginRight: 5, marginLeft: 5}}
-                            color={headerFontColor}>
-                            </Icon>
-                            <Text style={styles.headerText}>返回</Text>
-                        </View>
-                    </TouchableOpacity>,
+        headerLeft: <LevelUpReturnButton navigation={navigation}/>,
         headerTitle: 
         <View
             style={{

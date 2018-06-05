@@ -44,38 +44,38 @@ class Review extends Component{
             {
                 section: '國小中年級(第十屆聯合盃作文大賽-初賽題目)',
                 data: [{
-                    title: '台北市初賽',
+                    title: commonTitle,
                     back: 'Review',
                     itemTitle: '台北市初賽',
                     pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
                 },{
                     title: commonTitle,
                     back: 'Review',
-                    itemTitle: 'QA2',
+                    itemTitle: '新竹市初賽',
                     pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
                 },{
                     title: commonTitle,
                     back: 'Review',
-                    itemTitle: 'QA3',
+                    itemTitle: '台東市初賽',
                     pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
                 }]
             },
             {
-                section: '國小高年級(第十屆聯合盃作文大賽-初賽題目)',
+                section: '國小中年級(第十屆聯合盃作文大賽-決賽題目)',
                 data: [{
                     title: commonTitle,
-                    back: 'QA',
-                    itemTitle: 'QA4',
+                    back: 'Review',
+                    itemTitle: '台中市決賽',
                     pageUrl: 'https://www.google.com'
                 },{
                     title: commonTitle,
-                    back: 'QA',
-                    itemTitle: 'QA5',
+                    back: 'Review',
+                    itemTitle: '宜蘭市決賽',
                     pageUrl: 'https://www.yahoo.com'
                 },{
                     title: commonTitle,
-                    back: 'QA',
-                    itemTitle: 'QA6',
+                    back: 'Review',
+                    itemTitle: '彰化市決賽',
                     pageUrl: 'https://www.bing.com'
                 }]
             }
@@ -84,39 +84,39 @@ class Review extends Component{
         {
             section: '國小高年級(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
-                title: '台北市初賽',
+                title: commonTitle,
                 back: 'Review',
                 itemTitle: '台北市初賽',
                 pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
             },{
                 title: commonTitle,
                 back: 'Review',
-                itemTitle: 'QA2',
+                itemTitle: '高雄市初賽',
                 pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
             },{
                 title: commonTitle,
                 back: 'Review',
-                itemTitle: 'QA3',
+                itemTitle: '新竹市初賽',
                 pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
             }]
         },
         {
-            section: '國八(第十屆聯合盃作文大賽-初賽題目)',
+            section: '國小高年級(第十屆聯合盃作文大賽-決賽題目)',
             data: [{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA4',
-                pageUrl: 'https://www.google.com'
+                back: 'Review',
+                itemTitle: '台中市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             },{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA5',
-                pageUrl: 'https://www.yahoo.com'
+                back: 'Review',
+                itemTitle: '台南市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             },{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA7',
-                pageUrl: 'https://www.bing.com'
+                back: 'Review',
+                itemTitle: '台北市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             }]
         }
     ],
@@ -124,29 +124,29 @@ class Review extends Component{
         {
             section: '國七(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
-                title: '台北市初賽',
+                title: commonTitle,
                 back: 'Review',
                 itemTitle: '台北市初賽',
-                pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             },{
                 title: commonTitle,
                 back: 'Review',
-                itemTitle: 'QA2',
-                pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
+                itemTitle: '台南市初賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             }]
         },
         {
-            section: '國九(第十屆聯合盃作文大賽-決賽題目)',
+            section: '國七(第十屆聯合盃作文大賽-決賽題目)',
             data: [{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA4',
-                pageUrl: 'https://www.google.com'
+                back: 'Review',
+                itemTitle: '台北市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             },{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA5',
-                pageUrl: 'https://www.yahoo.com'
+                back: 'Review',
+                itemTitle: '新北市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             }]
         }
     ],
@@ -154,24 +154,24 @@ class Review extends Component{
         {
             section: '國八(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
-                title: '台北市初賽',
+                title: commonTitle,
                 back: 'Review',
                 itemTitle: '台北市初賽',
                 pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
             }]
         },
         {
-            section: '高中(第十屆聯合盃作文大賽-決賽題目)',
+            section: '國八(第十屆聯合盃作文大賽-決賽題目)',
             data: [{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA4',
-                pageUrl: 'https://www.google.com'
+                back: 'Review',
+                itemTitle: '台北市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             },{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA5',
-                pageUrl: 'https://www.yahoo.com'
+                back: 'Review',
+                itemTitle: '台中市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             }]
         }
     ],
@@ -186,17 +186,17 @@ class Review extends Component{
             }]
         },
         {
-            section: 'section2',
+            section: '國九(第十屆聯合盃作文大賽-決賽題目)',
             data: [{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA4',
-                pageUrl: 'https://www.google.com'
+                back: 'Review',
+                itemTitle: '花蓮市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             },{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA5',
-                pageUrl: 'https://www.yahoo.com'
+                back: 'Review',
+                itemTitle: '高雄市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             }]
         }
     ],
@@ -204,24 +204,24 @@ class Review extends Component{
         {
             section: '高中(第十屆聯合盃作文大賽-初賽題目)',
             data: [{
-                title: '台北市初賽',
+                title: commonTitle,
                 back: 'Review',
                 itemTitle: '台北市初賽',
                 pageUrl: 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf'
             }]
         },
         {
-            section: 'section2',
+            section: '高中(第十屆聯合盃作文大賽-決賽題目)',
             data: [{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA4',
-                pageUrl: 'https://www.google.com'
+                back: 'Review',
+                itemTitle: '台南市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             },{
                 title: commonTitle,
-                back: 'QA',
-                itemTitle: 'QA5',
-                pageUrl: 'https://www.yahoo.com'
+                back: 'Review',
+                itemTitle: '高雄市決賽',
+                pageUrl: 'https://publish.get.com.tw/BookPre_pdf/51MG000320-2.pdf'
             }]
         }
     ]

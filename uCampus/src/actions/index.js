@@ -4,6 +4,7 @@ export const SELECT_REGION = 'SELECT_REGION';
 export const SELECT_STAGE = 'SELECT_STAGE';
 export const SET_WRITING_CONTEXT = 'SET_WRITING_CONTEXT';
 export const SET_LEVELUP_HAMBURGER_STATE = 'SET_LEVELUP_HAMBURGER_STATE';
+export const LEVELUP_HAMBURGER = 'LEVELUP_HAMBURGER';
 
 export function selectLevel(awardLevel){
 
@@ -35,6 +36,16 @@ export function selectRegion(region){
     }
   }
 }
+
+export function toggleLevelUpHamburger(){
+
+  return{
+    type: LEVELUP_HAMBURGER,
+    payload: {
+    }
+  }
+}
+
 
 
 export function selectStage(tryoutOrFinal){
